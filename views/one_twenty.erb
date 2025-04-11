@@ -1,12 +1,11 @@
 <h1>1d20</h1>
 
-<% if @dice1 == 1 %>
-  <p style= "color: red"><%= @outcome %></p>
+<ul>
 
-<% elsif @dice1 == 20%>
-  <p style= "color: green"><%= @outcome %></p>
+  <% @rolls.each do |a_roll| %>
+      <li>
+        <%= a_roll %>
+      </li>
+  <% end %>
 
-<% else %>
-  <p><%= @outcome %></p>
-
-<% end %> 
+</ul>
