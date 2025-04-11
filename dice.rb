@@ -37,9 +37,9 @@ get("/dice/2/10") do
 end 
 
 get("/dice/1/20") do
-  dice1= rand(1..20)
+  @dice1= rand(1..20)
 
-  @outcome= "You have rolled a #{dice1}."
+  @outcome= "You have rolled a #{@dice1}."
 
   erb(:one_twenty)
 
@@ -60,12 +60,16 @@ get("/dice/5/4") do
 
 end 
 
-get("/dice/2/8") do
-  dice1 = rand(1..8)
-  dice2 = rand(1..8)
-  sum = dice1 + dice2
 
-  @outcome = "You have rolled a #{dice1} and a #{dice2} for a total of #{sum}."
+get("/dice/100/6") do
+  @rolls = []   #create a blank array
 
-  erb(:two_eight)
+  100.times do
+    dice = rand(1..6)
+
+    @rolls.push(dice) #add the random number to the array
+  end
+
+  erb(:one_hundred_six)
+
 end 
