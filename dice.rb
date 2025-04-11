@@ -1,0 +1,68 @@
+require "sinatra"
+require "sinatra/reloader"
+
+get ("/") do
+  "Hello World!"
+end
+
+
+get("/dice/2/6") do
+  dice1= rand(1..6)
+  dice2 = rand(1..6)
+  sum = dice1 + dice2
+
+  outcome = "You rolled a #{dice1} and a #{dice2} for a total of #{sum}."
+
+  "<h1>2d6</h1>
+   <p>#{outcome}</p>"
+
+end 
+
+get("/dice/2/10") do
+  dice1= rand(1..10)
+  dice2 = rand(1..10)
+  sum= dice1 + dice2
+
+  outcome = "Your rolled a #{dice1} and a #{dice2} for a total of #{sum}."
+
+  "<h1>2d10</h1>
+   <p>#{outcome}</p>"
+
+end 
+
+get("/dice/1/20") do
+  dice1= rand(1..20)
+
+  outcome= "You have rolled a #{dice1}."
+
+ "<h1>1d20</h1>
+  <p>#{outcome}</p>"
+
+end 
+
+get("/dice/5/4") do
+  dice1= rand(1..4)
+  dice2 = rand(1..4)
+  dice3 = rand(1..4)
+  dice4 = rand(1..4)
+  dice5 = rand(1..4)
+  
+  sum= dice1 + dice2 + dice3 + dice4 + dice5
+
+  outcome = "You have rolled a #{dice1}, #{dice2}, #{dice3}, #{dice4}, and a #{dice5} for a total of #{sum}"
+
+  "<h1>5d4</h1>
+   <p>#{outcome}</p>"
+
+end 
+
+get("/dice/2/8") do
+  dice1 = rand(1..8)
+  dice2 = rand(1..8)
+  sum = dice1 + dice2
+
+  outcome = "You have rolled a #{dice1} and a #{dice2} for a total of #{sum}."
+
+  "<h1>2d8</h1>
+   <p>#{outcome}</p>"
+end 
