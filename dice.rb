@@ -20,11 +20,9 @@ get("/dice/2/6") do
   dice2 = rand(1..6)
   sum = dice1 + dice2
 
-  outcome = "You rolled a #{dice1} and a #{dice2} for a total of #{sum}."
+  @outcome = "You rolled a #{dice1} and a #{dice2} for a total of #{sum}."
 
-  "<h1>2d6</h1>
-   <p>#{outcome}</p>"
-
+  erb(:two_six)
 end 
 
 get("/dice/2/10") do
@@ -32,20 +30,18 @@ get("/dice/2/10") do
   dice2 = rand(1..10)
   sum= dice1 + dice2
 
-  outcome = "Your rolled a #{dice1} and a #{dice2} for a total of #{sum}."
+  @outcome = "Your rolled a #{dice1} and a #{dice2} for a total of #{sum}."
 
-  "<h1>2d10</h1>
-   <p>#{outcome}</p>"
+  erb(:two_ten)
 
 end 
 
 get("/dice/1/20") do
   dice1= rand(1..20)
 
-  outcome= "You have rolled a #{dice1}."
+  @outcome= "You have rolled a #{dice1}."
 
- "<h1>1d20</h1>
-  <p>#{outcome}</p>"
+  erb(:one_twenty)
 
 end 
 
@@ -58,10 +54,9 @@ get("/dice/5/4") do
   
   sum= dice1 + dice2 + dice3 + dice4 + dice5
 
-  outcome = "You have rolled a #{dice1}, #{dice2}, #{dice3}, #{dice4}, and a #{dice5} for a total of #{sum}"
+  @outcome = "You have rolled a #{dice1}, #{dice2}, #{dice3}, #{dice4}, and a #{dice5} for a total of #{sum}"
 
-  "<h1>5d4</h1>
-   <p>#{outcome}</p>"
+  erb(:five_four)
 
 end 
 
@@ -70,8 +65,7 @@ get("/dice/2/8") do
   dice2 = rand(1..8)
   sum = dice1 + dice2
 
-  outcome = "You have rolled a #{dice1} and a #{dice2} for a total of #{sum}."
+  @outcome = "You have rolled a #{dice1} and a #{dice2} for a total of #{sum}."
 
-  "<h1>2d8</h1>
-   <p>#{outcome}</p>"
+  erb(:two_eight)
 end 
